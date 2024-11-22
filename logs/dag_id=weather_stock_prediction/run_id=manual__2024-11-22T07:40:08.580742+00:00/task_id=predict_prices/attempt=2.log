@@ -1,0 +1,173 @@
+[2024-11-22T07:45:23.820+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-22T07:45:23.826+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_stock_prediction.predict_prices manual__2024-11-22T07:40:08.580742+00:00 [queued]>
+[2024-11-22T07:45:23.828+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_stock_prediction.predict_prices manual__2024-11-22T07:40:08.580742+00:00 [queued]>
+[2024-11-22T07:45:23.828+0000] {taskinstance.py:2866} INFO - Starting attempt 2 of 2
+[2024-11-22T07:45:23.832+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): predict_prices> on 2024-11-22 07:40:08.580742+00:00
+[2024-11-22T07:45:23.836+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=12671) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-22T07:45:23.837+0000] {standard_task_runner.py:72} INFO - Started process 12682 to run task
+[2024-11-22T07:45:23.838+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_stock_prediction', 'predict_prices', 'manual__2024-11-22T07:40:08.580742+00:00', '--job-id', '1043', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpofooeelq']
+[2024-11-22T07:45:23.838+0000] {standard_task_runner.py:105} INFO - Job 1043: Subtask predict_prices
+[2024-11-22T07:45:23.857+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_stock_prediction.predict_prices manual__2024-11-22T07:40:08.580742+00:00 [running]> on host cba1e82f0ade
+[2024-11-22T07:45:23.883+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_stock_prediction' AIRFLOW_CTX_TASK_ID='predict_prices' AIRFLOW_CTX_EXECUTION_DATE='2024-11-22T07:40:08.580742+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-22T07:40:08.580742+00:00'
+[2024-11-22T07:45:23.884+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-11-22T07:45:23.884+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-11-22T07:45:23.884+0000] {logging_mixin.py:190} INFO - Current task name:predict_prices state:running start_date:2024-11-22 07:45:23.826275+00:00
+[2024-11-22T07:45:23.884+0000] {logging_mixin.py:190} INFO - Dag name:weather_stock_prediction and current dag run status:running
+[2024-11-22T07:45:23.884+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-22T07:45:23.887+0000] {logging_mixin.py:190} INFO - Weather forecast data: {'date': {'0': '2024-11-21', '1': '2024-11-22', '2': '2024-11-23', '3': '2024-11-24', '4': '2024-11-25', '5': '2024-11-26', '6': '2024-11-27', '7': '2024-11-28', '8': '2024-11-29', '9': '2024-11-30', '10': '2024-12-01', '11': '2024-12-02', '12': '2024-12-03', '13': '2024-12-04', '14': '2024-12-05', '15': '2024-12-06'}, 'temperature': {'0': 15.35, '1': 14.94, '2': 13.3, '3': 12.75, '4': 12.84, '5': 12.23, '6': 11.72, '7': 10.73, '8': 10.74, '9': 11.19, '10': 11.87, '11': 11.96, '12': 12.07, '13': 15.04, '14': 15.66, '15': 15.9}, 'min_temperature': {'0': 14.22, '1': 12.33, '2': 11.05, '3': 10.15, '4': 11.19, '5': 11.52, '6': 10.1, '7': 9.12, '8': 8.87, '9': 9.07, '10': 9.72, '11': 10.39, '12': 10.02, '13': 10.47, '14': 11.17, '15': 11.47}, 'max_temperature': {'0': 15.95, '1': 15.86, '2': 13.41, '3': 13.37, '4': 14.17, '5': 13.06, '6': 13.46, '7': 13.75, '8': 14.05, '9': 14.47, '10': 14.95, '11': 14.52, '12': 15.0, '13': 15.55, '14': 15.66, '15': 16.08}, 'humidity': {'0': 76, '1': 85, '2': 74, '3': 61, '4': 69, '5': 83, '6': 57, '7': 58, '8': 57, '9': 57, '10': 55, '11': 54, '12': 54, '13': 47, '14': 45, '15': 49}, 'wind_speed': {'0': 10.89, '1': 9.04, '2': 4.91, '3': 6.3, '4': 6.67, '5': 4.29, '6': 3.82, '7': 3.96, '8': 3.99, '9': 4.05, '10': 4.15, '11': 3.48, '12': 3.66, '13': 3.74, '14': 3.19, '15': 2.99}}
+[2024-11-22T07:45:23.897+0000] {logging_mixin.py:190} INFO - DataFrame structure:   date  ...                                         wind_speed
+0  NaT  ...  {'0': 10.89, '1': 9.04, '2': 4.91, '3': 6.3, '...
+
+[1 rows x 6 columns]
+[2024-11-22T07:45:23.898+0000] {logging_mixin.py:190} INFO - DataFrame contains missing values. Applying imputation.
+[2024-11-22T07:45:23.899+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag.py", line 298, in predict_prices
+    df = pd.DataFrame(imputer.fit_transform(df), columns=df.columns)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/base.py", line 1098, in fit_transform
+    return self.fit(X, **fit_params).transform(X)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/impute/_base.py", line 421, in fit
+    X = self._validate_input(X, in_fit=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/impute/_base.py", line 332, in _validate_input
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/base.py", line 633, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1012, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 745, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 2084, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NaTType'
+[2024-11-22T07:45:23.904+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2024-11-22T07:45:23.905+0000] {logging_mixin.py:190} INFO - Task start:2024-11-22 07:45:23.826275+00:00 end:2024-11-22 07:45:23.904732+00:00 duration:0.078457
+[2024-11-22T07:45:23.905+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): predict_prices> dag:<DAG: weather_stock_prediction> dagrun:<DagRun weather_stock_prediction @ 2024-11-22 07:40:08.580742+00:00: manual__2024-11-22T07:40:08.580742+00:00, state:running, queued_at: 2024-11-22 07:40:08.591145+00:00. externally triggered: True>
+[2024-11-22T07:45:23.905+0000] {logging_mixin.py:190} INFO - Failure caused by float() argument must be a string or a real number, not 'NaTType'
+[2024-11-22T07:45:23.905+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=weather_stock_prediction, task_id=predict_prices, run_id=manual__2024-11-22T07:40:08.580742+00:00, execution_date=20241122T074008, start_date=20241122T074523, end_date=20241122T074523
+[2024-11-22T07:45:23.908+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-22T07:45:23.909+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 1043 for task predict_prices (float() argument must be a string or a real number, not 'NaTType'; 12682)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 417, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag.py", line 298, in predict_prices
+    df = pd.DataFrame(imputer.fit_transform(df), columns=df.columns)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/base.py", line 1098, in fit_transform
+    return self.fit(X, **fit_params).transform(X)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/impute/_base.py", line 421, in fit
+    X = self._validate_input(X, in_fit=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/impute/_base.py", line 332, in _validate_input
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/base.py", line 633, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1012, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 745, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 2084, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NaTType'
+[2024-11-22T07:45:23.942+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-11-22T07:45:23.951+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-22T07:45:23.952+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

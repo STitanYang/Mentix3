@@ -1,0 +1,53 @@
+[2024-11-22T06:17:35.544+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-22T06:17:35.555+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_stock_prediction.create_prediction_table manual__2024-11-22T06:17:32.490670+00:00 [queued]>
+[2024-11-22T06:17:35.563+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_stock_prediction.create_prediction_table manual__2024-11-22T06:17:32.490670+00:00 [queued]>
+[2024-11-22T06:17:35.563+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2024-11-22T06:17:35.578+0000] {taskinstance.py:2889} INFO - Executing <Task(PostgresOperator): create_prediction_table> on 2024-11-22 06:17:32.490670+00:00
+[2024-11-22T06:17:35.588+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=5151) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-22T06:17:35.591+0000] {standard_task_runner.py:72} INFO - Started process 5221 to run task
+[2024-11-22T06:17:35.599+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_stock_prediction', 'create_prediction_table', 'manual__2024-11-22T06:17:32.490670+00:00', '--job-id', '602', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpz53z6wva']
+[2024-11-22T06:17:35.600+0000] {standard_task_runner.py:105} INFO - Job 602: Subtask create_prediction_table
+[2024-11-22T06:17:35.669+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_stock_prediction.create_prediction_table manual__2024-11-22T06:17:32.490670+00:00 [running]> on host cba1e82f0ade
+[2024-11-22T06:17:35.773+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_stock_prediction' AIRFLOW_CTX_TASK_ID='create_prediction_table' AIRFLOW_CTX_EXECUTION_DATE='2024-11-22T06:17:32.490670+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-22T06:17:32.490670+00:00'
+[2024-11-22T06:17:35.776+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-11-22T06:17:35.778+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-11-22T06:17:35.780+0000] {logging_mixin.py:190} INFO - Current task name:create_prediction_table state:running start_date:2024-11-22 06:17:35.556087+00:00
+[2024-11-22T06:17:35.781+0000] {logging_mixin.py:190} INFO - Dag name:weather_stock_prediction and current dag run status:running
+[2024-11-22T06:17:35.781+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-22T06:17:35.782+0000] {sql.py:278} INFO - Executing: 
+    CREATE TABLE IF NOT EXISTS predictions (
+        id INT,
+        date TIMESTAMP,
+        temperature FLOAT, 
+        min_temperature FLOAT,
+        max_temperature FLOAT,
+        humidity FLOAT,
+        wind_speed FLOAT,
+        price FLOAT
+    );
+    
+[2024-11-22T06:17:35.798+0000] {base.py:84} INFO - Retrieving connection 'asdfg'
+[2024-11-22T06:17:35.807+0000] {base.py:84} INFO - Retrieving connection 'asdfg'
+[2024-11-22T06:17:35.813+0000] {sql.py:544} INFO - Running statement: 
+    CREATE TABLE IF NOT EXISTS predictions (
+        id INT,
+        date TIMESTAMP,
+        temperature FLOAT, 
+        min_temperature FLOAT,
+        max_temperature FLOAT,
+        humidity FLOAT,
+        wind_speed FLOAT,
+        price FLOAT
+    );
+    , parameters: None
+[2024-11-22T06:17:35.825+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-22T06:17:35.826+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_stock_prediction, task_id=create_prediction_table, run_id=manual__2024-11-22T06:17:32.490670+00:00, execution_date=20241122T061732, start_date=20241122T061735, end_date=20241122T061735
+[2024-11-22T06:17:35.835+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-11-22T06:17:35.835+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-11-22T06:17:35.836+0000] {logging_mixin.py:190} INFO - Dag name:weather_stock_prediction queued_at:2024-11-22 06:17:32.505187+00:00
+[2024-11-22T06:17:35.837+0000] {logging_mixin.py:190} INFO - Task hostname:cba1e82f0ade operator:PostgresOperator
+[2024-11-22T06:17:35.859+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-22T06:17:35.872+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-22T06:17:35.873+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
